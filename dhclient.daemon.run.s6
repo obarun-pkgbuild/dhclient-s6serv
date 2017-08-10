@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+card=$(ip link show | grep enp | cut -b4-9)
+
+[ -r /etc/dhcpd.conf ] && . /etc/dhcpd.conf
+
+exec 2>&1
+exec /usr/bin/dhclient -d -v $card $OPTS
