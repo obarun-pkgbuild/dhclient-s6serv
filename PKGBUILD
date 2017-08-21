@@ -2,7 +2,7 @@
 
 pkgname=dhclient-s6serv
 pkgver=0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="dhclient service for s6"
 arch=(x86_64)
 license=('beerware')
@@ -24,7 +24,7 @@ package() {
 	
 	# log
 	install -Dm 0755 "$srcdir/dhclient.log.run.s6" "$pkgdir/etc/s6-serv/available/classic/dhclient/log/run"
-	install -Dm 0644 "$srcdir/dhclient.logd" "$pkgdir/etc/s6-serv/log.d/serv/dhclient"
+	install -Dm 0644 "$srcdir/dhclient.logd" "$pkgdir/etc/s6-serv/log.d/dhclient"
 	
 	install -Dm 0755 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/dhclient-s6serv/LICENSE"
 }
